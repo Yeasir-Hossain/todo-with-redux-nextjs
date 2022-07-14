@@ -14,18 +14,18 @@ export const TodoList = () => {
             <div className='space-x-4'>
                 <input type="text"
                     onChange={(e) => { setInputEvent(e.target.value) }}
-                    placeholder='Enter Here...'
+                    placeholder='Enter task'
                     className='pl-4 p-3 border-2 border-black w-96'
                     value={inputEvent}
                 />
-                <button onClick={() => dispatch(addTodo(inputEvent), setInputEvent(''))} className='pl-4 p-3 bg-blue-400 text-white rounded-lg '>ADD</button>
+                <button onClick={() => dispatch(addTodo(inputEvent), setInputEvent(''))} className='pl-4 p-3 bg-blue-600 text-white rounded-lg '>ADD</button>
 
             </div>
 
             {selector.map((item) => {
                 return (
                     <div key={item.id} className='flex justify-between items-center w-full'>
-                        <p className='font-semibold'>{item.data} </p> <button onClick={() => dispatch(removeTodo(item.id))} className='border-2 border-black pl-4 p-3 bg-red-500 text-white rounded-lg'>Delete</button>
+                        <p className='font-semibold'>{item.data} </p> <button onClick={() => dispatch(removeTodo(item.id))} className='pl-4 p-3 bg-red-600 text-white rounded-lg'>Delete</button>
                     </div>
                 )
             })}
